@@ -1,0 +1,128 @@
+{% extends "convert.html" %}
+
+
+
+{% block style %}
+  <style>
+      body {
+        background-color: lightgray;
+        background-image: url("img/background.png");
+        background-repeat: repeat;
+        background-size: 6%;
+
+      }
+      
+      header {
+          display: flex;
+          height: 55px;
+          background-color: #DC3545;
+          color: white;
+      
+      }
+      .icon {
+          margin: 0px 20px;
+      }
+
+
+      .content-title{
+          height: 55px;
+          line-height:calc( 55px - 2px );
+          padding-right: 20px;
+          
+      }
+
+      .contents{
+          display: flex;
+          line-height:calc( 55px - 2px );
+          font-size: 20px;
+      }
+      
+      .content{
+          padding: 0px 20px;
+          border-radius: 0px;
+          line-height:calc( 55px - 2px )
+      }
+
+      .instructions{
+          margin:20px;
+      }
+
+      .instlist{
+          font-size: 120%;
+          margin-top: 10px;
+      }
+
+      .instlist span{
+          border-bottom: 2px solid red;
+      }
+
+      .main {
+          margin: 0px 70px;
+          padding: 40px;
+          height:100%;
+          background-color:rgba(255,255,255,0.95);
+      }
+
+      .form-select{
+        margin-top: 10px;
+        padding: 5px;
+      }
+
+      .searchbtn{
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+      
+      .savelist_title{
+        border-bottom: 6px double #DC3545;
+        margin-bottom: 30px;
+      }
+
+      .downloadbtn{
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .resulttable {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      .tabledata {
+        border-collapse: collapse;
+        text-align: left;
+      }
+
+
+
+
+
+      
+
+  </style>
+{% endblock %}
+
+
+
+{% block content %}
+  {% for i in range(zip_list[0] |length) %}
+    <tr>
+      <th scope="row" class="align-middle">{{i+1}}</th>
+      <td style="width: 30%" class="align-middle text-center">
+        <a href="{{zip_list[0][i]}}" target="_blank"><img class='result_img' src="{{zip_list[4][i]}}" width="60%" height="60%"></a>
+      </td>
+      <td style="width: 70%" class="tabledata">
+        <p class="result_title" style="font-size: 150%;">{{zip_list[2][i]}}</p>
+        <p class="result_channel" style="font-size: 120%;">{{zip_list[3][i]}}</p>
+        <h3 class="result_format"><span class="badge badge-primary">Format : {{zip_list[1][i]}}</span></h3>
+      </td>
+      <td class="align-middle">
+        <form class="text-center" method="POST">
+          <input type="submit" name="delete{{i}}" class="btn btn-outline-danger" value="delete">
+        </form>
+      </td>
+    </tr>
+  {% endfor %}
+
+{% endblock %}

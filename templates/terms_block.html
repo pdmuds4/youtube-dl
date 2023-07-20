@@ -1,0 +1,72 @@
+{% extends "terms.html" %}
+
+
+
+{% block style %}
+  <style>
+      body {
+        background-color: lightgray;
+        background-image: url("img/background.png");
+        background-repeat: repeat;
+        background-size: 6%;
+
+      }
+      
+      header {
+          display: flex;
+          height: 55px;
+          background-color: #DC3545;
+          color: white;
+      
+      }
+      .icon {
+          margin: 0px 20px;
+      }
+
+
+      .content-title{
+          height: 55px;
+          line-height:calc( 55px - 2px );
+          padding-right: 20px;
+          
+      }
+
+      .contents{
+          display: flex;
+          line-height:calc( 55px - 2px );
+          font-size: 20px;
+      }
+      
+      .content{
+          padding: 0px 20px;
+          border-radius: 0px;
+          line-height:calc( 55px - 2px )
+      }
+
+
+      .main {
+          margin: 0px 70px;
+          padding: 40px;
+          height:100%;
+          background-color:rgba(255,255,255,0.95);
+      }
+    
+      .tag {
+          margin: 20px
+    
+      }
+
+      .tag_content{
+          font-size: 120%;
+          margin-top: 20px;
+      }
+
+
+
+
+
+
+      
+
+  </style>
+{% endblock %}
